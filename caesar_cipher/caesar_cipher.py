@@ -4,17 +4,21 @@
 
 def encrypt_char(c, k):
     ci = ord(c)
+    l = 'Z' if c.isupper() else 'z'
+    o = 'A' if c.isupper() else 'a'
 
-    if ci + k > ord('z'):
-        return chr(ord('a') + (ci + k - ord('z')) - 1)
+    if ci + k > ord(l):
+        return chr(ord(o) + (ci + k - ord(l)) - 1)
 
     return chr(ci + k)
 
 def decrypt_char(c, k):
     ci = ord(c)
+    l = 'Z' if c.isupper() else 'z'
+    o = 'A' if c.isupper() else 'a'
 
-    if ci - k < ord('a'):
-        return chr(ord('z') - abs(k - (ci - ord('a'))) + 1)
+    if ci - k < ord(o):
+        return chr(ord(l) - abs(k - (ci - ord(o))) + 1)
 
     return chr(ci - k)
 
