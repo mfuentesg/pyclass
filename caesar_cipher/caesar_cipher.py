@@ -12,6 +12,7 @@ def encrypt_char(c, k):
 
     return chr(ci + k)
 
+
 def decrypt_char(c, k):
     ci = ord(c)
     l = 'Z' if c.isupper() else 'z'
@@ -22,7 +23,8 @@ def decrypt_char(c, k):
 
     return chr(ci - k)
 
-def caesar_cipher(text, key, decrypt = False):
+
+def caesar_cipher(text, key, decrypt=False):
     char_action = decrypt_char if decrypt else encrypt_char
 
     if key < 0:
@@ -33,4 +35,3 @@ def caesar_cipher(text, key, decrypt = False):
 
     K = key % 26 if key > 26 else key
     return ''.join([char_action(x, K) if x.isalpha() else x for x in text])
-
