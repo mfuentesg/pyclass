@@ -6,7 +6,8 @@ from caesar_cipher import caesar_cipher
 
 def test(base, expected):
     result = "SUCCESS" if base == expected else "FAILED"
-    print("Case {} == {} -> {}".format(base, expected, result))
+    print("Case {} == {} ~> {}".format(base, expected, result))
+
 
 print(" cipher ".center(20, '='))
 test(caesar_cipher('¡hola!', 2), '¡jqnc!')
